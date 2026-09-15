@@ -1,92 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090316">
-  <title>T — A Place That Doesn't Exist</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>T — A PLACE THAT DOESN'T EXIST</title>
+  <meta name="theme-color" content="#070712">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="stars"></div>
-  <div class="noise"></div>
+  <section class="intro-screen" id="introScreen" aria-label="Intro">
+    <div class="intro-stars"></div>
+    <div class="intro-orb"></div>
+    <div class="intro-content">
+      <p class="intro-small">FOR SOMEONE SPECIAL</p>
+      <h1>I Made<br><span>Something</span><br>For You</h1>
+      <p class="intro-sub">A little universe waiting to be explored.</p>
+      <button class="enter-button" id="enterButton">ENTER THE UNIVERSE <span>→</span></button>
+    </div>
+  </section>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="stars stars-a" aria-hidden="true"></div>
+  <div class="stars stars-b" aria-hidden="true"></div>
 
-  <main id="app">
-    <section id="landing" class="screen active">
-      <div class="orbit orbit-a"></div>
-      <div class="orbit orbit-b"></div>
-      <div class="glow"></div>
+  <header class="topbar">
+    <a class="brand" href="#universe" aria-label="Volver al universo"><span>✦</span> FOR YOU</a>
+    <nav>
+      <a href="#universe">HOME</a>
+      <a href="#frequency">FREQUENCY</a>
+      <a href="#end">THE END?</a>
+    </nav>
+    <span class="location">YOU ARE HERE <i></i></span>
+  </header>
 
-      <div class="landing-card">
-        <div class="tiny-label">PRIVATE TRANSMISSION // 001</div>
-        <div class="big-t">T</div>
-        <p class="landing-line" id="landingLine">I made something.</p>
-        <button class="enter-btn" id="enterBtn">ENTER <span>→</span></button>
+  <main>
+    <section class="hero" id="universe">
+      <div class="nebula nebula-one"></div>
+      <div class="nebula nebula-two"></div>
+      <div class="mountains"></div>
+      <div class="hero-copy left-note">No es solo una página.<br>Es un pequeño universo<br>hecho para ti. <span>♡</span></div>
+      <div class="hero-copy right-note">Hay cosas que<br>solo tienen sentido<br>cuando apareces tú. <span>♡</span></div>
+
+      <div class="orbit-system" id="orbitSystem">
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
+
+        <button class="moon moon-about" data-open="about" aria-label="Abrir El comienzo">
+          <span class="moon-glow"></span><b>01</b><small>THE BEGINNING</small>
+        </button>
+        <button class="moon moon-noticed" data-open="noticed" aria-label="Abrir Cosas que noté">
+          <span class="moon-glow"></span><b>02</b><small>THINGS I NOTICED</small>
+        </button>
+        <button class="moon moon-frequency" data-open="frequency" aria-label="Abrir Frequency">
+          <span class="moon-glow"></span><b>03</b><small>FREQUENCY</small>
+        </button>
+        <button class="moon moon-unknown" data-open="unknown" aria-label="Abrir Lo desconocido">
+          <span class="moon-glow"></span><b>04</b><small>THE UNKNOWN</small>
+        </button>
+
+        <div class="planet-wrap">
+          <div class="planet-ring ring-back"></div>
+          <div class="planet">
+            <div class="planet-shine"></div>
+            <div class="planet-crater c1"></div><div class="planet-crater c2"></div><div class="planet-crater c3"></div>
+            <div class="planet-label"><span>IT'S YOU</span><em>and that's all</em><small>✦</small></div>
+          </div>
+          <div class="planet-ring ring-front"></div>
+        </div>
       </div>
 
-      <div class="scroll-note">somewhere between a memory and a dream</div>
+      <div class="scroll-hint"><span></span> EXPLORE THE ORBIT</div>
     </section>
 
-    <section id="universe" class="screen">
-      <header class="topbar">
-        <div class="logo">T<span>•</span></div>
-        <div class="coordinates">UNKNOWN / 00.0000°</div>
-      </header>
+    <section class="story-section about-section" id="about">
+      <div class="section-number">01 / 04</div>
+      <div class="story-text">
+        <p class="eyebrow">THE BEGINNING</p>
+        <h2>Supongo que todo empezó<br><i>sin que ninguno lo planeara.</i></h2>
+        <p>No sé exactamente en qué momento una conversación cualquiera empezó a sentirse diferente. Al principio era simplemente hablar, reírnos, descubrir cosas del otro y dejar que las horas pasaran.</p>
+        <p>Pero entre una conversación y otra fui notando algo: contigo todo se siente demasiado fácil. No hace falta pensar demasiado qué decir, ni intentar convertir cada momento en algo perfecto. Simplemente pasa.</p>
+        <p>Y quizá eso es lo que más me gusta. Que algo que comenzó de una manera tan inesperada terminó convirtiéndose en una de esas pequeñas cosas que uno espera con ganas durante el día.</p>
+      </div>
+      <div class="floating-caption">some beginnings<br>are quiet <span>✦</span></div>
+    </section>
 
-      <div class="sky-copy">
-        <div class="eyebrow">WELCOME TO</div>
-        <h1>A PLACE<br><em>THAT DOESN'T EXIST.</em></h1>
-        <p>There are a few things hidden around here.<br>Take your time.</p>
+    <section class="story-section noticed-section" id="noticed">
+      <div class="cosmic-card">
+        <div class="mini-planet"></div>
+        <span class="card-kicker">THINGS I NOTICED</span>
+        <h2>Pequeñas cosas.<br><i>Pero importantes.</i></h2>
+        <p>Me gusta cómo puedes pasar de hablar de algo completamente serio a decir una tontería y hacer que todo cambie de tono.</p>
+        <p>Me gusta descubrir que coincidimos en más cosas de las que esperaba. Gustos, formas de pensar, canciones, detalles que quizá para otra persona no significarían demasiado, pero que para mí hacen que diga: <strong>“¿cómo es posible que se parezca tanto a mí?”</strong></p>
+        <p>Y también me gusta que contigo no siento que tenga que demostrar nada. Puedo ser yo, con mis cosas buenas, mis rarezas y mis momentos de caos.</p>
+      </div>
+      <div class="quote">“A veces una persona llega y, sin hacer ruido, cambia la forma en que se siente un día normal.”</div>
+    </section>
+
+    <section class="frequency-section" id="frequency">
+      <div class="frequency-header">
+        <div>
+          <p class="eyebrow">03 / FREQUENCY</p>
+          <h2>Canciones que me<br><i>recuerdan a ti.</i></h2>
+        </div>
+        <p class="frequency-intro">No sé si una canción puede explicar exactamente lo que uno siente, pero algunas se acercan bastante. Estas son las que, por alguna razón, terminan llevándome a ti.</p>
       </div>
 
-      <div class="planet-wrap">
-        <div class="planet-ring ring-one"></div>
-        <div class="planet-ring ring-two"></div>
-        <button class="planet" id="planetBtn" aria-label="Explore the planet">
-          <span class="planet-shine"></span>
-          <span class="planet-text">explore</span>
-        </button>
+      <div class="songs-grid">
+        <article class="song-card">
+          <div class="cover cover-bound"><span>ye</span><strong>BOUND 2</strong></div>
+          <div class="song-info"><h3>Bound 2</h3><p>Kanye West</p><span>La que tenía que estar aquí.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Bound%202%20Kanye%20West">↗ Escuchar en Spotify</a></div>
+        </article>
+        <article class="song-card">
+          <div class="cover cover-wonder"><span>GRADUATION</span><strong>I WONDER</strong></div>
+          <div class="song-info"><h3>I Wonder</h3><p>Kanye West</p><span>Porque tiene algo que no sé explicar.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/I%20Wonder%20Kanye%20West">↗ Escuchar en Spotify</a></div>
+        </article>
+        <article class="song-card">
+          <div class="cover cover-binki"><span>binki</span><strong>HOTEL WINDOW</strong></div>
+          <div class="song-info"><h3>Hotel Window</h3><p>binki</p><span>De esas que se quedan dando vueltas.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Hotel%20Window%20binki">↗ Escuchar en Spotify</a></div>
+        </article>
+        <article class="song-card">
+          <div class="cover cover-marias"><span>THE MARÍAS</span><strong>I DON'T KNOW YOU</strong></div>
+          <div class="song-info"><h3>I Don't Know You</h3><p>The Marías</p><span>Suena como una noche tranquila pensando demasiado.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/I%20Don%27t%20Know%20You%20The%20Mar%C3%ADas">↗ Escuchar en Spotify</a></div>
+        </article>
       </div>
 
-      <div class="floating-object object-1" data-modal="beginning">
-        <span>01</span><b>THE<br>BEGINNING</b>
-      </div>
-      <div class="floating-object object-2" data-modal="noticed">
-        <span>02</span><b>THINGS<br>I NOTICED</b>
-      </div>
-      <div class="floating-object object-3" data-modal="frequency">
-        <span>03</span><b>FREQUENCY</b>
-      </div>
-      <div class="floating-object object-4" data-modal="unknown">
-        <span>?</span><b>THE<br>UNKNOWN</b>
-      </div>
+      <div class="frequency-note">Cada canción tiene un pequeño pedacito de lo que me hace pensar en ti. <span>♡</span></div>
+    </section>
 
-      <div class="hint">CLICK THE FLOATING OBJECTS</div>
+    <section class="unknown-section" id="unknown">
+      <div class="unknown-orb"></div>
+      <div class="unknown-copy">
+        <p class="eyebrow">04 / THE UNKNOWN</p>
+        <h2>Y luego está<br><i>todo lo que todavía no sé.</i></h2>
+        <p>No sé qué va a pasar después. Y, sinceramente, creo que no necesito saberlo todavía.</p>
+        <p>Hay algo bonito en conocer a alguien poco a poco. En dejar que las conversaciones continúen, que aparezcan nuevos recuerdos y que cada día añada una pequeña página a una historia que nadie escribió antes.</p>
+        <p>Así que este lugar no intenta decirte que sé exactamente hacia dónde vamos. Solo quería dejarte algo que diga: <strong>me alegra haberte conocido.</strong></p>
+        <button class="final-button" data-open="final">ONE LAST THING →</button>
+      </div>
+    </section>
+
+    <section class="end-section" id="end">
+      <div class="end-stars"></div>
+      <div class="end-planet"></div>
+      <div class="end-copy">
+        <p class="eyebrow">ONE LAST THING</p>
+        <h2>Gracias por existir<br><i>en mi pequeño universo.</i></h2>
+        <p>Quizá esto parezca una página cualquiera cuando la ves por primera vez. Pero cada palabra está aquí porque hubo una persona que hizo que quisiera construirla.</p>
+        <p>Y esa persona eres tú.</p>
+        <p>Espero que cuando vuelvas a ver este sitio algún día, recuerdes este momento y sonrías, aunque sea un poquito.</p>
+        <div class="signature">— Josué <span>♡</span></div>
+      </div>
     </section>
   </main>
 
-  <div class="modal" id="modal">
-    <div class="modal-backdrop"></div>
-    <article class="modal-card">
-      <button class="close" id="closeModal">×</button>
-      <div class="modal-number" id="modalNumber">01</div>
-      <h2 id="modalTitle">THE BEGINNING</h2>
-      <div class="modal-body" id="modalBody"></div>
-      <button class="next-btn" id="nextBtn">CONTINUE →</button>
-    </article>
-  </div>
-
-  <section class="final-screen" id="finalScreen">
-    <div class="final-stars"></div>
-    <div class="final-content">
-      <div class="final-small">TRANSMISSION COMPLETE</div>
-      <h2>ONE LAST<br><span>THING.</span></h2>
-      <button id="lastThing">OPEN</button>
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close aria-label="Cerrar">×</button>
+      <p class="eyebrow" id="modalEyebrow"></p>
+      <h2 id="modalTitle"></h2>
+      <div id="modalBody"></div>
+      <button class="modal-next" data-close>VOLVER AL UNIVERSO ↗</button>
     </div>
-  </section>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,130 +1,78 @@
-const landing = document.getElementById("landing");
-const universe = document.getElementById("universe");
-const enterBtn = document.getElementById("enterBtn");
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
-const modalNumber = document.getElementById("modalNumber");
-const modalTitle = document.getElementById("modalTitle");
-const modalBody = document.getElementById("modalBody");
-const nextBtn = document.getElementById("nextBtn");
-const finalScreen = document.getElementById("finalScreen");
-const lastThing = document.getElementById("lastThing");
+const introScreen = document.getElementById('introScreen');
+const enterButton = document.getElementById('enterButton');
+if(enterButton && introScreen){
+  enterButton.addEventListener('click',()=>{
+    introScreen.classList.add('hide');
+    setTimeout(()=>introScreen.remove(),950);
+  });
+}
+
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modalTitle');
+const modalEyebrow = document.getElementById('modalEyebrow');
+const modalBody = document.getElementById('modalBody');
 
 const content = {
-  beginning: {
-    number: "01",
-    title: "THE BEGINNING",
-    body: `Maybe this was never supposed to become anything.<br><br>
-    A random conversation. A little curiosity. Two people discovering that they have more in common than expected.<br><br>
-    <span style="color:#ffe45e">And somehow, here we are.</span>`
+  about: {
+    eyebrow: '01 / THE BEGINNING',
+    title: 'Supongo que todo empezó <i>sin que lo planeáramos.</i>',
+    body: `<p>Al principio parecía una conversación cualquiera. Hablar, descubrir gustos, reírnos de cualquier cosa y dejar que el tiempo pasara.</p><p>Pero poco a poco empecé a notar que esperaba esas conversaciones. Que una notificación tuya podía cambiar completamente cómo se sentía el día.</p><p>Y eso me parece bonito porque no fue algo que tuve que forzar. Simplemente apareció. Una conexión inesperada que se fue sintiendo cada vez más natural.</p><p>Quizá por eso este universo empieza aquí: porque algunas de las mejores cosas comienzan sin avisar.</p>`
   },
   noticed: {
-    number: "02",
-    title: "THINGS I NOTICED",
-    body: `There are little things you notice when you actually pay attention to someone.<br><br>
-    The things you like. The things you say without thinking. The weird coincidences. The moments that make a conversation last longer than it was supposed to.<br><br>
-    <span style="color:#ff58bf">Some of them stayed in my head.</span>`
+    eyebrow: '02 / THINGS I NOTICED',
+    title: 'Son pequeñas cosas, <i>pero me quedo con ellas.</i>',
+    body: `<p>Me gusta cómo una conversación contigo puede saltar de un tema a otro sin sentirse rara. Me gusta descubrir coincidencias y encontrar cosas que tenemos en común.</p><p>También me gusta tu manera de ser. No porque piense que tienes que ser perfecta, sino porque siento que puedes ser tú misma y eso ya hace que hablar contigo sea especial.</p><p>Y hay algo que quizá sea lo más importante: contigo no siento que tenga que convertir cada momento en algo enorme. A veces basta con estar hablando y ya.</p><p>Supongo que son esas cosas pequeñas las que terminan haciendo que alguien se vuelva importante.</p>`
   },
   frequency: {
-    number: "03",
-    title: "FREQUENCY",
-    body: `Some people just have a strange way of matching your frequency.<br><br>
-    Same jokes. Similar tastes. Conversations that don't feel forced. That feeling of realizing, "wait... you like that too?"<br><br>
-    This section is intentionally unfinished. Maybe we'll add songs to it later.`
+    eyebrow: '03 / FREQUENCY',
+    title: 'Algunas canciones <i>terminaron sonando diferente.</i>',
+    body: `<p>Hay canciones que uno escucha una vez y ya. Y hay otras que, por alguna razón, empiezan a quedar asociadas con una persona.</p><p>Por eso está la sección de Frequency. No porque cada canción tenga una explicación exacta, sino porque cuando aparecen, inevitablemente pienso en ti.</p><p>Abajo puedes encontrar las canciones y abrirlas directamente en Spotify. Quizá algún día escuches alguna y entiendas exactamente por qué terminó aquí.</p>`
   },
   unknown: {
-    number: "04",
-    title: "THE UNKNOWN",
-    body: `You weren't supposed to find this yet.<br><br>
-    Honestly, I don't know where this story goes either.<br><br>
-    And maybe that's the whole point.<br><br>
-    <span style="color:#57e8ff">Some things are better discovered instead of planned.</span>`
+    eyebrow: '04 / THE UNKNOWN',
+    title: 'No sé qué viene después. <i>Y está bien.</i>',
+    body: `<p>No quiero convertir esto en una promesa sobre el futuro. Hay demasiadas cosas que todavía no sabemos.</p><p>Prefiero pensar que queda mucho por descubrir: más conversaciones, más canciones, más momentos inesperados y más recuerdos que todavía no existen.</p><p>Lo único que sí sé es que me alegra muchísimo haberte conocido. Y que, entre todos los caminos posibles, este pequeño encuentro fue uno de los que más ganas me dieron de seguir explorando.</p>`
+  },
+  final: {
+    eyebrow: 'ONE LAST THING',
+    title: 'Gracias por existir <i>en este pequeño universo.</i>',
+    body: `<p>Hice todo esto porque quería darte algo que no fuera simplemente un mensaje más. Algo que pudieras recorrer, descubrir y volver a visitar cuando quisieras.</p><p>No hace falta que encuentres una respuesta perfecta después de verlo. Solo quería que supieras que alguien se tomó el tiempo de construir un pequeño lugar del internet pensando en ti.</p><p>Así que gracias por las conversaciones, por las risas, por las coincidencias y por haber aparecido de una forma tan inesperada.</p><p><strong>Me alegra haberte conocido.</strong> ♡</p>`
   }
 };
 
-const order = ["beginning", "noticed", "frequency", "unknown"];
-let currentIndex = 0;
-
-enterBtn.addEventListener("click", () => {
-  landing.classList.remove("active");
-  universe.classList.add("active");
-  window.scrollTo(0, 0);
-});
-
-document.querySelectorAll(".floating-object").forEach(obj => {
-  obj.addEventListener("click", () => openModal(obj.dataset.modal));
-});
-
-document.getElementById("planetBtn").addEventListener("click", () => {
-  openModal("unknown");
-});
-
-function openModal(key) {
+function openModal(key){
   const item = content[key];
-  currentIndex = order.indexOf(key);
-  modalNumber.textContent = item.number;
-  modalTitle.textContent = item.title;
+  if(!item) return;
+  modalEyebrow.textContent = item.eyebrow;
+  modalTitle.innerHTML = item.title;
   modalBody.innerHTML = item.body;
-  nextBtn.textContent = currentIndex === order.length - 1 ? "THE END →" : "CONTINUE →";
-  modal.classList.add("open");
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
 }
 
-function hideModal() {
-  modal.classList.remove("open");
-}
+document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.open)));
+document.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal()});
 
-closeModal.addEventListener("click", hideModal);
-document.querySelector(".modal-backdrop").addEventListener("click", hideModal);
-
-nextBtn.addEventListener("click", () => {
-  if (currentIndex < order.length - 1) {
-    openModal(order[currentIndex + 1]);
-  } else {
-    hideModal();
-    setTimeout(() => finalScreen.classList.add("show"), 450);
-  }
-});
-
-lastThing.addEventListener("click", () => {
-  finalScreen.innerHTML = `
-    <div class="final-content">
-      <div class="final-small">MESSAGE // T</div>
-      <h2 style="font-size:clamp(32px,7vw,78px);line-height:1.05;max-width:800px;">
-        I MADE THIS<br>
-        <span>JUST FOR YOU.</span>
-      </h2>
-      <p style="max-width:550px;margin:0 auto 30px;color:rgba(255,255,255,.65);line-height:1.8;">
-        This is only the first version.<br>
-        The rest of the story is still being written.
-      </p>
-      <button id="restart">START AGAIN</button>
-    </div>
-  `;
-
-  document.getElementById("restart").addEventListener("click", () => {
-    finalScreen.classList.remove("show");
-    universe.classList.remove("active");
-    landing.classList.add("active");
+// Tiny parallax: the universe subtly reacts to pointer movement without moving the clickable moons too far.
+const system = document.getElementById('orbitSystem');
+if(system){
+  system.addEventListener('pointermove', e=>{
+    const r = system.getBoundingClientRect();
+    const x = (e.clientX-r.left)/r.width-.5;
+    const y = (e.clientY-r.top)/r.height-.5;
+    system.style.transform = `translate(${x*8}px,${y*8}px)`;
   });
-});
+  system.addEventListener('pointerleave',()=>system.style.transform='');
+}
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    hideModal();
-    finalScreen.classList.remove("show");
-  }
-});
-
-// Subtle mouse parallax on desktop
-window.addEventListener("pointermove", e => {
-  if (window.innerWidth < 800) return;
-  const x = (e.clientX / window.innerWidth - .5);
-  const y = (e.clientY / window.innerHeight - .5);
-
-  document.querySelector(".sky-copy")?.style.setProperty(
-    "transform", `translate(${x * -10}px, ${y * -8}px)`
-  );
-  document.querySelector(".planet-wrap")?.style.setProperty(
-    "transform", `translate(${x * 14}px, ${y * 12}px)`
-  );
+// Highlight Frequency when it is opened from the orbit.
+document.querySelector('[data-open="frequency"]')?.addEventListener('click',()=>{
+  setTimeout(()=>document.getElementById('frequency')?.scrollIntoView({behavior:'smooth'}),180);
 });
