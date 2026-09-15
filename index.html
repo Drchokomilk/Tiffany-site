@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090316">
+  <title>T — A Place That Doesn't Exist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars"></div>
+  <div class="noise"></div>
+
+  <main id="app">
+    <section id="landing" class="screen active">
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+      <div class="glow"></div>
+
+      <div class="landing-card">
+        <div class="tiny-label">PRIVATE TRANSMISSION // 001</div>
+        <div class="big-t">T</div>
+        <p class="landing-line" id="landingLine">I made something.</p>
+        <button class="enter-btn" id="enterBtn">ENTER <span>→</span></button>
+      </div>
+
+      <div class="scroll-note">somewhere between a memory and a dream</div>
+    </section>
+
+    <section id="universe" class="screen">
+      <header class="topbar">
+        <div class="logo">T<span>•</span></div>
+        <div class="coordinates">UNKNOWN / 00.0000°</div>
+      </header>
+
+      <div class="sky-copy">
+        <div class="eyebrow">WELCOME TO</div>
+        <h1>A PLACE<br><em>THAT DOESN'T EXIST.</em></h1>
+        <p>There are a few things hidden around here.<br>Take your time.</p>
+      </div>
+
+      <div class="planet-wrap">
+        <div class="planet-ring ring-one"></div>
+        <div class="planet-ring ring-two"></div>
+        <button class="planet" id="planetBtn" aria-label="Explore the planet">
+          <span class="planet-shine"></span>
+          <span class="planet-text">explore</span>
+        </button>
+      </div>
+
+      <div class="floating-object object-1" data-modal="beginning">
+        <span>01</span><b>THE<br>BEGINNING</b>
+      </div>
+      <div class="floating-object object-2" data-modal="noticed">
+        <span>02</span><b>THINGS<br>I NOTICED</b>
+      </div>
+      <div class="floating-object object-3" data-modal="frequency">
+        <span>03</span><b>FREQUENCY</b>
+      </div>
+      <div class="floating-object object-4" data-modal="unknown">
+        <span>?</span><b>THE<br>UNKNOWN</b>
+      </div>
+
+      <div class="hint">CLICK THE FLOATING OBJECTS</div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <article class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <div class="modal-number" id="modalNumber">01</div>
+      <h2 id="modalTitle">THE BEGINNING</h2>
+      <div class="modal-body" id="modalBody"></div>
+      <button class="next-btn" id="nextBtn">CONTINUE →</button>
+    </article>
+  </div>
+
+  <section class="final-screen" id="finalScreen">
+    <div class="final-stars"></div>
+    <div class="final-content">
+      <div class="final-small">TRANSMISSION COMPLETE</div>
+      <h2>ONE LAST<br><span>THING.</span></h2>
+      <button id="lastThing">OPEN</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
