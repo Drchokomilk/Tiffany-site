@@ -30,6 +30,7 @@
     <nav>
       <a href="#universe">HOME</a>
       <a href="#frequency">FREQUENCY</a>
+      <a href="#diary">OUR TIMELINE</a>
       <a href="#end">THE END?</a>
     </nav>
     <span class="location">YOU ARE HERE <i></i></span>
@@ -61,14 +62,41 @@
           <span class="moon-glow"></span><b>04</b><small>THE UNKNOWN</small>
         </button>
 
-        <div class="planet-wrap">
-          <div class="planet-ring ring-back"></div>
-          <div class="planet">
-            <div class="planet-shine"></div>
-            <div class="planet-crater c1"></div><div class="planet-crater c2"></div><div class="planet-crater c3"></div>
-            <div class="planet-label"><span>IT'S YOU</span><em>and that's all</em><small>✦</small></div>
+        <div class="heart-system" aria-label="El corazón central y sus recuerdos">
+          <svg class="heart-vessels" viewBox="0 0 800 620" aria-hidden="true">
+            <defs>
+              <linearGradient id="vesselFlow" x1="0" x2="1">
+                <stop offset="0" stop-color="#ffb1c7"/>
+                <stop offset=".45" stop-color="#ff5f87"/>
+                <stop offset="1" stop-color="#9d2d62"/>
+              </linearGradient>
+              <filter id="heartGlow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path class="heart-vessel" data-vessel="about" d="M350 285 C265 220 195 165 105 105 C75 85 54 67 25 48"/>
+            <path class="heart-vessel" data-vessel="noticed" d="M390 250 C475 180 550 130 650 85 C690 67 735 48 775 34"/>
+            <path class="heart-vessel" data-vessel="frequency" d="M330 365 C245 400 190 455 125 520 C95 550 62 575 28 588"/>
+            <path class="heart-vessel" data-vessel="unknown" d="M420 355 C505 395 570 445 650 505 C685 530 735 555 780 575"/>
+            <path class="vessel-flow" data-vessel="about" d="M350 285 C265 220 195 165 105 105 C75 85 54 67 25 48"/>
+            <path class="vessel-flow" data-vessel="noticed" d="M390 250 C475 180 550 130 650 85 C690 67 735 48 775 34"/>
+            <path class="vessel-flow" data-vessel="frequency" d="M330 365 C245 400 190 455 125 520 C95 550 62 575 28 588"/>
+            <path class="vessel-flow" data-vessel="unknown" d="M420 355 C505 395 570 445 650 505 C685 530 735 555 780 575"/>
+          </svg>
+
+          <button class="memory-bubble bubble-about" data-open="about" data-vessel="about" aria-label="Abrir El comienzo"><span>💘</span><small>THE BEGINNING</small></button>
+          <button class="memory-bubble bubble-noticed" data-open="noticed" data-vessel="noticed" aria-label="Abrir Cosas que noté"><span>♡</span><small>THINGS I NOTICED</small></button>
+          <button class="memory-bubble bubble-frequency" data-open="frequency" data-vessel="frequency" aria-label="Abrir Frequency"><span>♪</span><small>FREQUENCY</small></button>
+          <button class="memory-bubble bubble-unknown" data-open="unknown" data-vessel="unknown" aria-label="Abrir Lo desconocido"><span>✦</span><small>THE UNKNOWN</small></button>
+
+          <div class="real-heart" aria-hidden="true">
+            <div class="heart-aorta"></div>
+            <div class="heart-vein vein-left"></div>
+            <div class="heart-vein vein-right"></div>
+            <div class="heart-chamber chamber-left"></div>
+            <div class="heart-chamber chamber-right"></div>
+            <div class="heart-groove"></div>
+            <div class="heart-shine"></div>
+            <div class="heart-label"><span>THE HEART</span><em>everything connects here</em></div>
           </div>
-          <div class="planet-ring ring-front"></div>
         </div>
       </div>
 
@@ -122,12 +150,33 @@
           <div class="song-info"><h3>Hotel Window</h3><p>binki</p><span>De esas que se quedan dando vueltas.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Hotel%20Window%20binki">↗ Escuchar en Spotify</a></div>
         </article>
         <article class="song-card">
+          <div class="cover cover-marco"><span>binki</span><strong>MARCO</strong></div>
+          <div class="song-info"><h3>Marco</h3><p>binki</p><span>Porque hay canciones que simplemente se sienten como un recuerdo.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Marco%20binki">↗ Escuchar en Spotify</a></div>
+        </article>
+        <article class="song-card">
+          <div class="cover cover-carino"><span>THE MARÍAS</span><strong>CARIÑO</strong></div>
+          <div class="song-info"><h3>Cariño</h3><p>The Marías</p><span>Una pequeña dosis de ternura para este universo.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Cari%C3%B1o%20The%20Mar%C3%ADas">↗ Escuchar en Spotify</a></div>
+        </article>
+        <article class="song-card">
           <div class="cover cover-marias"><span>THE MARÍAS</span><strong>I DON'T KNOW YOU</strong></div>
           <div class="song-info"><h3>I Don't Know You</h3><p>The Marías</p><span>Suena como una noche tranquila pensando demasiado.</span><a target="_blank" rel="noopener" href="https://open.spotify.com/search/I%20Don%27t%20Know%20You%20The%20Mar%C3%ADas">↗ Escuchar en Spotify</a></div>
         </article>
       </div>
 
       <div class="frequency-note">Cada canción tiene un pequeño pedacito de lo que me hace pensar en ti. <span>♡</span></div>
+    </section>
+
+    <section class="diary-section" id="diary">
+      <div class="diary-header">
+        <p class="eyebrow">OUR TIMELINE</p>
+        <h2>Antes de nosotros, <i>sin saber a dónde iba todo.</i></h2>
+        <p>Algunos recuerdos merecen quedarse guardados. No como una cronología perfecta, sino como pequeñas constelaciones de los días que nos fueron acercando.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-entry"><span class="timeline-dot">✦</span><div><small>THE FIRST CHAPTER</small><h3>Cuando empezamos a hablar</h3><p>Lo que parecía una conversación cualquiera terminó convirtiéndose en una parte de mis días que esperaba con ganas. Poco a poco aparecieron las coincidencias, las bromas y esa sensación de que hablar contigo era demasiado fácil.</p></div></article>
+        <article class="timeline-entry"><span class="timeline-dot">♡</span><div><small>THE LITTLE THINGS</small><h3>Los detalles que fui guardando</h3><p>Hubo mensajes, canciones, salidas y pequeños momentos que quizá por separado parecen simples. Juntos empezaron a formar algo que ya no se sentía tan casual.</p></div></article>
+        <article class="timeline-entry"><span class="timeline-dot">💫</span><div><small>THE DAY IT CHANGED</small><h3>El día que nos hicimos novios</h3><p>Y después de todo lo anterior, llegó ese momento durante una despedida. Sin necesitar una gran escena, simplemente nos dimos cuenta de que queríamos estar juntos. Este es el recuerdo que convierte todo lo anterior en el comienzo de otra historia.</p></div></article>
+      </div>
     </section>
 
     <section class="unknown-section" id="unknown">

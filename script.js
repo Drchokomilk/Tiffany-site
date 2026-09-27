@@ -26,12 +26,12 @@ const content = {
   frequency: {
     eyebrow: '03 / FREQUENCY',
     title: 'Algunas canciones <i>terminaron sonando diferente.</i>',
-    body: `<p>Hay canciones que uno escucha una vez y ya. Y hay otras que, por alguna razón, empiezan a quedar asociadas con una persona.</p><p>Por eso está la sección de Frequency. No porque cada canción tenga una explicación exacta, sino porque cuando aparecen, inevitablemente pienso en ti.</p><p>Abajo puedes encontrar las canciones y abrirlas directamente en Spotify. Quizá algún día escuches alguna y entiendas exactamente por qué terminó aquí.</p>`
+    body: `<p>Hay canciones que uno escucha una vez y ya. Y hay otras que, por alguna razón, empiezan a quedar asociadas con una persona.</p><p>Por eso está la sección de Frequency. No porque cada canción tenga una explicación exacta, sino porque cuando aparecen, inevitablemente pienso en ti.</p><p>Abajo puedes encontrar las canciones y abrirlas directamente en Spotify. Hay unas que ya me recuerdan a momentos concretos y otras que simplemente tienen esa sensación que me hace pensar en ti.</p><p>Y sí: <strong>Marco</strong> tenía que estar aquí. Algunas canciones no necesitan explicación; simplemente aparecen y se quedan.</p>`
   },
   unknown: {
     eyebrow: '04 / THE UNKNOWN',
     title: 'No sé qué viene después. <i>Y está bien.</i>',
-    body: `<p>No quiero convertir esto en una promesa sobre el futuro. Hay demasiadas cosas que todavía no sabemos.</p><p>Prefiero pensar que queda mucho por descubrir: más conversaciones, más canciones, más momentos inesperados y más recuerdos que todavía no existen.</p><p>Lo único que sí sé es que me alegra muchísimo haberte conocido. Y que, entre todos los caminos posibles, este pequeño encuentro fue uno de los que más ganas me dieron de seguir explorando.</p>`
+    body: `<p>Ya no es exactamente lo desconocido de antes. Ahora existe un capítulo que sí conocemos: elegimos estar juntos. Y aun así queda muchísimo por descubrir.</p><p>Prefiero pensar que queda mucho por descubrir: más conversaciones, más canciones, más momentos inesperados y más recuerdos que todavía no existen.</p><p>Lo único que sí sé es que me alegra muchísimo haberte conocido. Ahora este pequeño universo no solo guarda el principio de todo; también guarda el momento en que nos convertimos oficialmente en nosotros.</p>`
   },
   final: {
     eyebrow: 'ONE LAST THING',
@@ -57,6 +57,16 @@ function closeModal(){
 }
 
 document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.open)));
+
+document.querySelectorAll('.memory-bubble[data-vessel]').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const key=el.dataset.vessel;
+    document.querySelectorAll('.memory-bubble').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.vessel-flow').forEach(v=>v.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll(`.vessel-flow[data-vessel="${key}"]`).forEach(v=>v.classList.add('active'));
+  });
+});
 document.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal()});
 
